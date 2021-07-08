@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi2</title>
+</head>
+<body bgcolor="#ff8c00">
+    <h3>This is update page.!!</h3>
+    <hr>
+    <form action="/bbs/list/up2/go" method="post">
+    {# form를 보낼때 서버로 부터 승인받은 키를 받아 데이터를 전달할 수 있음 #}
+        {% csrf_token %}
+        <h4>번호 <input type="text" name="id" value="{{ data.id }}" readonly><br></h4>
+        <h4>제목 <input type="text" name="title" value="{{ data.title }}"></h4>
+        <h4>이름 <input type="text" name="name" value="{{ data.name }}"></h4>
+        <h4>이메일 <input type="text" name="email" value="{{ data.email }}"></h4>
+        <h4>게시글</h4><textarea cols=100 rows=10 name="contents"
+                              value="{{ data.contents }}"></textarea>
+        <input type="submit" value="게시글수정">
+    </form>
+</body>
+</html>
+
+

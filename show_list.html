@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bbs_list</title>
+</head>
+<body>
+    {{ bbs_list }}
+    <hr color="red">
+    {% if bbs_list %}
+        {% for data in bbs_list %}
+            - <a href="/bbs/list/{{ data.id }}">{{ data.id }}</a>
+            "게시글 제목은" - {{ data.title }},
+            "게시자 이름은" - {{ data.name }},
+            "게시자 이메일주소는" - {{ data.email }}<br>
+    {% endfor %}
+{% else %}
+        <p>nothing!!!</p>
+{% endif %}
+</body>
+</html>

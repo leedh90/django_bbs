@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search page</title>
+</head>
+<body>
+    {{ bbs_list }}
+    <hr color="red">
+    {% if data %}
+        "번호" - {{ data.id }}<br>
+        "제목" - {{ data.title }}<br>
+        "이름" - {{ data.name }}<br>
+        "이메일주소" - {{ data.email }}<br>
+        "게시글내용" -{{ data.contents }}<br>
+    {% else %}
+        <p>nothing!!!</p>
+    {% endif %}
+    <a href="/bbs/list/del/{{ data.id }}">DELETE</a>
+    <a href="/bbs/list/up/{{ data.id }}">UPDATE</a>
+</body>
+</html>

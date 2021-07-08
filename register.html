@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi2</title>
+</head>
+<body bgcolor="#ffc0cb">
+    <h3>Create Board</h3>
+    <hr>
+    <form action="create" method="post">
+    {# form를 보낼때 서버로 부터 승인받은 키를 받아 데이터를 전달할 수 있음 #}
+        {% csrf_token %}
+        <h4>제목 <input type="text" name="title" value="title"></h4>
+        <h4>이름 <input type="text" name="name" value="name"></h4>
+        <h4>이메일 <input type="text" name="email" value="e-mail"></h4>
+        <h4>게시글</h4><textarea cols=100 rows=10
+                              name="contents">contents</textarea>
+        <input type="submit" value="게시글등록">
+    </form>
+</body>
+</html>
